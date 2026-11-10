@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lemon splash preview</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background: light-dark(#fffdf8, #1c1610);
+      color: light-dark(#1a140e, #f4ead2);
+    }
+    main {
+      display: grid;
+      justify-items: center;
+      gap: 1rem;
+      padding: 2rem;
+      text-align: center;
+    }
+    p {
+      margin: 0;
+      max-width: 28rem;
+      line-height: 1.4;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+<svg id="lemon-splash" width="220" viewBox="0 0 310 330" role="img" aria-labelledby="lemon-title lemon-desc">
+  <title id="lemon-title">Lemon splash</title>
+  <desc id="lemon-desc">The lemon stays still. Its three juice drops splash outward, then drift back into place.</desc>
+  <style>
+    #lemon-splash {
+      display: block;
+      overflow: visible;
+    }
+    #lemon-splash .juice-top,
+    #lemon-splash .juice-mid,
+    #lemon-splash .juice-side {
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    #lemon-splash .juice-top { animation: splash-top 2.8s ease-in-out infinite; }
+    #lemon-splash .juice-mid { animation: splash-mid 2.8s ease-in-out infinite; }
+    #lemon-splash .juice-side { animation: splash-side 2.8s ease-in-out infinite; }
+    @keyframes splash-top {
+      0%, 12% { transform: translate(0%, 0%) rotate(0deg); }
+      38% { transform: translate(16%, -150%) rotate(-18deg); }
+      50% { transform: translate(8%, -128%) rotate(-12deg); }
+      100% { transform: translate(0%, 0%) rotate(0deg); }
+    }
+    @keyframes splash-mid {
+      0%, 18% { transform: translate(0%, 0%) rotate(0deg); }
+      46% { transform: translate(120%, -125%) rotate(14deg); }
+      58% { transform: translate(96%, -100%) rotate(8deg); }
+      100% { transform: translate(0%, 0%) rotate(0deg); }
+    }
+    @keyframes splash-side {
+      0%, 24% { transform: translate(0%, 0%) rotate(0deg); }
+      54% { transform: translate(155%, -48%) rotate(22deg); }
+      66% { transform: translate(128%, -28%) rotate(14deg); }
+      100% { transform: translate(0%, 0%) rotate(0deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #lemon-splash .juice-top,
+      #lemon-splash .juice-mid,
+      #lemon-splash .juice-side { animation: none; }
+    }
+  </style>
+  <image class="lemon" href="data:image/png;base64,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" x="40" y="133" width="122" height="129" />
+  <image class="juice-top" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAqCAYAAACtMEtjAAABN0lEQVR42rWYQQ4CIQxF2bh2o6fwDtozeCISj+MVTPAGXscdDoYxI7RQaEvyV5P45v+2wOhce8EivyhkxayQn4ETLp8VGQoSSJwQiCHX8/G56rDfvZIImOdAAAO8H5eI6X47UcAubFvs7w9RkK3Sy4zECFwnlDtug/y5GYE0nKERTrvpwGgQtzaUWq5AGhvX1Q+U2lUKQlyBGaiYL28SHRJfMAMhc6Xb3pw6BW1QUSdAd21LkHp8LZDX3CGoFq9cSWeq5ahyJYmQcz4FDRj3IIySLmwNbDPC0XqNgET1KkCse99UvXqtzbqCcear19rsS6VmfabrVbiZupezXM3GNuRKGhsJs4itu8MjbsQfaWh81IVEPT5tN9UQp8gs3KAHpIWb3neuqht0D7RwQ7kKznCtf3R0j4IP6+qGpnfr8pMAAAAASUVORK5CYII=" x="98" y="112" width="26" height="42" />
+  <image class="juice-mid" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAYAAADRcLDBAAABEUlEQVR42s1Xyw3CMAzNEEzBCL2QAVgJKctwZQIks0Gn6A7cApbIgdZJasc2RHq3Ku/l+dsQbE78IAXHg4TwRq4ArAW1yCkxrq9vIWkJ2Fx+ng7zcpvm5/2UC66X4wNBfB9HRXTJ1yCEgFoO4OUt8o4QUViSVEABurYSIg8DXsYVgMCwjeTGlwu9HGC4kdzC0BABIhEjAogEBXcXpCKypgsSEeouILi9wtqF/A8ugGtFSNq2dUXsygXLvuBfEcTAArfuWFlkgL0xSVzAwUa8Xj6olMjZ45rtQocchrYmBfI4tDXVXOgQD5E3XSjEluSbDbq4YP3qZll2iNXJyVB4Eu8RUf6kTclr/5XgRVwT85PzAqDK3XR16rk3AAAAAElFTkSuQmCC" x="127" y="130" width="33" height="34" />
+  <image class="juice-side" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAZCAYAAACsGgdbAAABCklEQVR42sXXwQ3DIAwAQIboFB0hnzJAV6rkZfrtBJXcDTpFdugvlaVQpRYEjG1iyc+IE8bghGATcU0sJKwZw6DgoKUjE9ocpkHVwCa46mLX6fSmnB/TL++38ytlA1R8FKAFRYsT5vO8LK1ZAYMal3ZKgtrDFsAgxlnCBDsLTUD62AvWAz0cmTLj+OvgYrlHYulYsfVRdDZHYTOll3X5KChbN3ZdSZ7dTkk3Sq3kTVjPXWUlR9Ur5AVlDYQ9b7k7VNI8e4Ger5Km3MPKzxpHPcqZQzOlNpnmze7U1hdHE9iLJRwrsaphuufRND/yyb2AMzmLNaj2X8gVyLEgxGE4MGCzw8hQsPlNzsYXdkdYCq40BXkAAAAASUVORK5CYII=" x="136" y="169" width="41" height="25" />
+</svg>
+
+    <p>Lemon stays still. Juice drops splash out, then settle back.</p>
+  </main>
+</body>
+</html>
